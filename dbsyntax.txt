@@ -1,0 +1,11 @@
+CREATE TABLE followers (
+    id  varchar(80) primary key,
+    handle  varchar(80),
+    timestamp   timestamp   DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE breed (
+    row_id  serial primary key,
+    follower_id varchar(80) references followers(id),
+    chosen_breed    varchar(80)
+);
